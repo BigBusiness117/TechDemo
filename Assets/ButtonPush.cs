@@ -12,13 +12,13 @@ public class ButtonPush : MonoBehaviour
     private Vector3 posOffset;
     private int count;
     private bool buttonPushDown = false;
-    public GameObject Block;
+    private GameObject Block;
+    public GameObject DoorTigger;
     // Start is called before the first frame update
     void Start()
     {
         posOffset = new Vector3(0, -2, 0);
         myTransform = GetComponent<Transform>();
-
     }
 
     // Update is called once per frame
@@ -47,9 +47,15 @@ public class ButtonPush : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
+            Block = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            Block.transform.position = new  Vector3(13, 21, -45);
             Block.AddComponent<Rigidbody>();
-           
-            Debug.Log("hws");
+            Block.tag = "Block";
+            Block.GetComponent<Rigidbody>().freezeRotation = true;
+            Block.GetComponent<Rigidbody>().mass = 0.3f;
+            Block.GetComponent<MeshRenderer>().enabled = true;
+            Block.GetComponent<MeshRenderer>().material.SetColor("_Color", Random.ColorHSV());
+            DoorTigger.GetComponent<MeshRenderer>().enabled = true;
 
         }
     }
