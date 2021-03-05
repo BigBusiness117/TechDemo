@@ -16,7 +16,7 @@ public class Respawned : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         myVector = new Vector3(0f, 0f, 20f);
-        nextVector = new Vector3(0f, 0f, -5f);
+        nextVector = new Vector3(0f, 0f, -20f);
         controller = player.GetComponent<CharacterController>();
         if (other.tag == "CheckPoint")
         {

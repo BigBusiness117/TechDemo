@@ -30,9 +30,10 @@ public class DoorOpen : MonoBehaviour
         }
     }
     private void OnTriggerStay(Collider other)
-    {  
-            
-            if (Door.position.y <= 3.3f)
+    {
+        if (other.gameObject.CompareTag("Block"))
+        {
+        if (Door.position.y <= 3.3f)
             {
                 opened = true;
             }
@@ -41,6 +42,9 @@ public class DoorOpen : MonoBehaviour
                 Doorobject.transform.Translate(new Vector3(0, speed, 0) * Time.deltaTime);
 
             }
+
+
+        }
         
     }
     private void OnTriggerExit(Collider other)
