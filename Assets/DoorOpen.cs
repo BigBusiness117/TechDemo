@@ -47,8 +47,4 @@ public class DoorOpen : MonoBehaviour
         }
         
     }
-    private void OnTriggerExit(Collider other)
-    {
-    }    
 }
-

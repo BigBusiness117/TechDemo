@@ -5,11 +5,6 @@ TagManager:
   serializedVersion: 2
   tags:
   - Block
-  - KillBox
-  - CheckPoint
-  - Platform
-  - Teleport
-  - TeleportBack
   layers:
   - Default
   - TransparentFX
